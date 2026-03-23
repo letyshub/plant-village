@@ -22,7 +22,7 @@ training:
     unfreeze_last_n_layers: 20
 
 data:
-  train_dir: data/raw/plantvillage
+  train_dir: data/raw/plantvillage/color
   validation_split: 0.2
   augmentation:
     horizontal_and_vertical_flip: true

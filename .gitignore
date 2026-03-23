@@ -33,7 +33,6 @@ model/
 
 # Logs and figures — regenerate from training runs
 outputs/logs/*.log
-outputs/figures/*.png
 
 # Tool caches
 .ruff_cache/
