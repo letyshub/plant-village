@@ -1,0 +1,36 @@
+model:
+  name: efficientnet_b0
+  num_classes: 38
+  dropout: 0.3
+  image_size: 224
+
+training:
+  batch_size: 32
+  seed: 42
+
+  phase1:
+    epochs: 10
+    learning_rate: 1.0e-3
+    early_stopping_patience: 3
+
+  phase2:
+    epochs: 20
+    learning_rate: 1.0e-5
+    early_stopping_patience: 5
+    reduce_lr_factor: 0.5
+    reduce_lr_patience: 2
+    unfreeze_last_n_layers: 20
+
+data:
+  train_dir: data/raw/plantvillage
+  validation_split: 0.2
+  augmentation:
+    horizontal_and_vertical_flip: true
+    rotation: 0.2
+    zoom: 0.15
+    brightness: 0.1
+
+outputs:
+  model_dir: outputs/models
+  log_dir: outputs/logs
+  model_filename: plant_disease_model.h5

@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "plant-disease-classifier"
+version = "0.1.0"
+description = "EfficientNetB0 transfer learning for plant disease detection on PlantVillage."
+requires-python = ">=3.10"
+dependencies = [
+    "tensorflow==2.16.2",
+    "gradio==4.44.0",
+    "opencv-python==4.10.0.84",
+    "matplotlib==3.9.2",
+    "numpy==1.26.4",
+    "Pillow==10.4.0",
+    "scikit-learn==1.5.2",
+    "seaborn==0.13.2",
+    "omegaconf==2.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.4",
+    "black>=24.4",
+    "mypy>=1.10",
+    "pre-commit>=3.7",
+]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true

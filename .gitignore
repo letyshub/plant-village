@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environments
+.venv/
+.venv-wsl/
+venv/
+.env
+*.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data — never commit raw datasets or processed data
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Model weights — use DVC or HuggingFace Hub instead
+outputs/models/*.h5
+outputs/models/*.pt
+outputs/models/*.onnx
+model/
+
+# Logs and figures — regenerate from training runs
+outputs/logs/*.log
+outputs/figures/*.png
+
+# Tool caches
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
